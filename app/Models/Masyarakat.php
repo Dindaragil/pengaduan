@@ -3,9 +3,9 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticable;
 
-class Masyarakat extends Model
+class Masyarakat extends Authenticable
 {
     use HasFactory;
 
@@ -14,7 +14,7 @@ class Masyarakat extends Model
     protected $fillable = [
         'nik',
         'nama',
-        'email',
+        'username',
         'password',
         'telp'
     ];
