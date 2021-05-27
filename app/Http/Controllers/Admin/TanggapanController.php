@@ -4,11 +4,42 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Pengaduan;
 use App\Models\Tanggapan;
 
-class PengaduanController extends Controller
+class TanggapanController extends Controller
 {
+
+    public function createOrUpdate(Request $request)
+    {
+        $pengaduan = Pengaduan::where('id', $request->id)->first();
+        $tanggapan = Tanggapan::where('id_pengaduan', $request->id_pengaduan)->first();
+
+        if ( $tanggapan ) {
+            $pengaduan->update(['status', $request->status]);
+
+            $tanggapan->update([
+                'tgl_tanggapan' => date('Y-m-d'),
+                'tanggapan' => $request->tanggapan,
+                'id_petugas' => Auth::guard('admin')->user()->id,
+            ]);
+
+            return redirect()->route('pengaduan.show', ['pengaduan' => $pengaduan, 'tanggapan' => $tanggapan])->with('status', 'Berhasil Dikirim!');
+        } else {
+            $pengaduan->update(['status' => $request->status]);
+
+            $tanggapan = Tanggapan::create([
+                'id_pengaduan' => $request->id,
+                'tgl_tanggapan' => date('Y-m-d'),
+                'tanggapan' => $request->tanggapan,
+                'id_petugas' => Auth::guard('admin')->user()->id_petugas,
+            ]);
+
+            return redirect()->route('pengaduan.show', ['pengaduan' => $pengaduan, 'tanggapan' => $tanggapan])->with('status', 'Berhasil Dikirim!');
+
+        }
+    }
     /**
      * Display a listing of the resource.
      *
@@ -16,8 +47,7 @@ class PengaduanController extends Controller
      */
     public function index()
     {
-        $pengaduan = Pengaduan::orderBy('tgl', 'desc')->get();
-        return view('Admin.Pengaduan.index', ['pengaduan' => $pengaduan]);
+        //
     }
 
     /**
@@ -49,9 +79,7 @@ class PengaduanController extends Controller
      */
     public function show($id)
     {
-        $pengaduan = Pengaduan::where('id', $id)->first();
-        $tanggapan = Tanggapan::where('id', $id)->first();
-        return view('Admin.Pengaduan.show', ['pengaduan' => $pengaduan, 'tanggapan' => $tanggapan]);
+        //
     }
 
     /**

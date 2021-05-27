@@ -121,7 +121,7 @@ body {
 .navbar .container-fluid #navbarNav .navbar-nav .nav-item .btn-purple {
     border: 1px solid #fff;
     background: #fff;
-    color: hsl(0, 80%, 40%) !important;
+    color: hsl(0, 80%, 30%) !important;
     width: 100%;
 }
 
@@ -132,7 +132,7 @@ body {
 }
 
 .navbar .container-fluid #navbarNav .navbar-nav .nav-item .btn-outline-purple:hover {
-    color: hsl(0, 80%, 40%);
+    color: hsl(0, 80%, 30%);;
     border: 1px solid #fff;
     background: #fff;
 }
@@ -210,19 +210,19 @@ body {
 }
 
 .row .col .content .card {
-    background: hsl(0, 80%, 40%);
+    background: hsl(0, 80%, 30%);
     padding: 16px;
     color: #fff;
 }
 
 .row .col .content .btn-custom {
-    background: hsl(0, 80%, 40%);
+    background: hsl(0, 80%, 30%);
     color: #fff;
     width: 100%;
 }
 
 .pengaduan .bg-purple {
-    background: hsl(0, 80%, 40%);
+    background: hsl(0, 80%, 30%);
     width: 100%;
     padding: 26px;
 }
@@ -239,8 +239,8 @@ body {
 }
 
 .modal .modal-dialog .modal-content .modal-body .btn-purple {
-    border: 1px solid hsl(0, 80%, 40%);
-    background: hsl(0, 80%, 40%);
+    border: 1px solid hsl(0, 80%, 30%);
+    background: hsl(0, 80%, 30%);
     color: #fff;
     width: 100%;
 }

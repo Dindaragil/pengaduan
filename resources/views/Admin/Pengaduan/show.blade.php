@@ -13,6 +13,13 @@
     .text-primary:hover {
         color: #6c607d;
     }
+
+    .btn-purple {
+        background-color: hsl(0, 80%, 30%);
+        border: 1px solid hsl(0, 80%, 30%);
+        color: #fff;
+        width: 100%;
+    }
 </style>
 @endsection
 @section('header')
@@ -55,9 +62,9 @@
                             <th>Status</th>
                             <td>:</td>
                             <td>
-                                @if ($pengaduan->status = '0')
+                                @if ($pengaduan->status == '0')
                                 <a href="#" class="badge bg-danger text-white">Pending</a>
-                                @elseif ($pengaduan->status = 'proses')
+                                @elseif ($pengaduan->status == 'proses')
                                 <a href="#" class="badge bg-warning text-white">Proses</a>
                                 @else
                                 <a href="#" class="badge bg-success text-white">Selesai</a>
@@ -75,21 +82,40 @@
                 <div class="text-center">Tanggapan Petugas</div>
             </div>
             <div class="card-body">
-                <form action="" method="POST">
+                <form action="{{ route('tanggapan.createOrUpdate') }}" method="POST">
                     @csrf
-                    <input type="hidden" name="id" value="">
+                    <input type="hidden" name="id_pengaduan" value="{{ $pengaduan->id }}">
                     <div class="form-group">
                         <label for="status">Status</label>
                         <div class="input-group mb-3">
                             <select name="status" id="status" class="custom-select">
-                                <option value="0">Pending</option>
+                                @if ($pengaduan->status == '0')
+                                <option selected value="0">Pending</option>
                                 <option value="proses">Proses</option>
                                 <option value="selesai">Selesai</option>
+                                @elseif ($pengaduan->status == 'proses')
+                                <option value="0">Pending</option>
+                                <option selected value="proses">Proses</option>
+                                <option value="selesai">Selesai</option>
+                                @else
+                                <option value="0">Pending</option>
+                                <option value="proses">Proses</option>
+                                <option selected value="selesai">Selesai</option>
+                                @endif
                             </select>
                         </div>
-
                     </div>
+                    <div class="form-group">
+                        <label for="Tanggapan"></label>
+                        <textarea name="tanggapan" id="tanggapan" rows="4" class="form-control" placeholder="Belum ada tanggapan">{{ $tanggapan}}</textarea>
+                    </div>
+                    <button type="submit" class="btn btn-purple">Tanggapi</button>
                 </form>
+                @if (Session::has('status'))
+                <div class="alert alert-success mt-2">
+                    {{ Session::get('status')}}
+                </div>
+                @endif
             </div>
         </div>
     </div>

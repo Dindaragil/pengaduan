@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="{{ asset('css/laporan.css') }}">
 @endsection
 
-@section('title', 'PEKAT - Pengaduan Masyarakat')
+@section('title', 'Pengaduan Masyarakat Kabupaten Tulungagung')
 
 @section('content')
 {{-- Section Header --}}
