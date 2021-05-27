@@ -120,7 +120,7 @@
                         <label for="password">Password</label>
                         <input type="password" name="password" id="password" class="form-control">
                     </div>
-                    <button type="submit" class="btn btn-purple text-white mt-3" style="width: 100%">MASUK</button>
+                    <button type="submit" class="btn btn-purple text-white mt-3" style="width: 100%">Masuk</button>
                 </form>
                 @if (Session::has('pesan'))
                 <div class="alert alert-danger mt-2">

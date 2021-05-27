@@ -1,7 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\User\UserController;
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\LaporanController;
+use App\Http\Controllers\Admin\PengaduanController;
+use App\Http\Controllers\Admin\PetugasController;
+use App\Http\Controllers\Admin\MasyarakatController;
+use Illuminate\Routing\RouteGroup;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,3 +32,16 @@ Route::post('/store', [UserController::class, 'storePengaduan'])->name('pekat.st
 Route::get('/laporan/{siapa?}', [UserController::class, 'laporan'])->name('pekat.laporan');
 
 Route::get('/logout', [UserController::class, 'logout'])->name('pekat.logout');
+
+Route::prefix('admin')->group(function () {
+    Route::get('/', [AdminController::class, 'formLogin'])->name('admin.formLogin');
+    Route::post('/login', [AdminController::class, 'login'])->name('admin.login');
+    Route::get('/logout', [AdminController::class, 'logout'])->name('admin.logout');
+
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
+
+    Route::resource('pengaduan', PengaduanController::class);
+    Route::resource('petugas', PetugasController::class);
+    Route::resource('masyarakat', MasyarakatController::class);
+    Route::get('laporan', [LaporanController::class, 'index'])->name('laporan.index');
+});

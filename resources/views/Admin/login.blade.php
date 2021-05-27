@@ -1,7 +1,12 @@
-@extends('layouts.user')
+<!DOCTYPE html>
+<html lang="en">
 
-@section('css')
-<style>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <style>
     body {
         background: #6a70fc;
     }
@@ -13,37 +18,28 @@
     }
 
 </style>
-@endsection
+    <title>Halaman Masuk Petugas</title>
+</head>
 
-@section('title', 'Halaman Daftar')
-
-@section('content')
+<body>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-lg-5">
-        <h2 class="text-center text-white mb-0 mt-5">Layanan Pengaduan Masyarakat</h2>
+            <h2 class="text-center text-white mb-0 mt-5">Layanan Pengaduan Masyarakat</h2>
             <P class="text-center text-white mb-5">Kabupaten Tulungagung</P>
             <div class="card mt-5">
                 <div class="card-body">
-                    <h2 class="text-center mb-5">Form Pendaftaran</h2>
-                    <form action="{{ route('pekat.register') }}" method="POST">
+                    <h2 class="text-center mb-5">Form Petugas</h2>
+                    <form action="{{ route('admin.login') }}" method="POST">
                         @csrf
-                        <div class="form-group">
-                            <input type="number" name="nik" placeholder="NIK" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" name="nama" placeholder="Nama Lengkap" class="form-control">
-                        </div>
                         <div class="form-group">
                             <input type="text" name="username" placeholder="Username" class="form-control">
                         </div>
                         <div class="form-group">
                             <input type="password" name="password" placeholder="Password" class="form-control">
                         </div>
-                        <div class="form-group">
-                            <input type="number" name="telp" placeholder="No. Telp" class="form-control">
-                        </div>
-                        <button type="submit" class="btn btn-purple">Daftar</button>
+
+                        <button type="submit" class="btn btn-purple">Masuk</button>
                     </form>
                 </div>
             </div>
@@ -56,4 +52,6 @@
         </div>
     </div>
 </div>
-@endsection
+</body>
+
+</html>

@@ -3,9 +3,9 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\User as Authenticable;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Masyarakat extends Authenticable
+class Masyarakat extends Authenticatable
 {
     use HasFactory;
 
