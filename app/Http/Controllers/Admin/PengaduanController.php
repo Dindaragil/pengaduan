@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Pengaduan;
 
 class PengaduanController extends Controller
 {
@@ -14,7 +15,8 @@ class PengaduanController extends Controller
      */
     public function index()
     {
-        return view('Admin.Pengaduan.index');
+        $pengaduan = Pengaduan::orderBy('tgl', 'desc')->get();
+        return view('Admin.Pengaduan.index', ['pengaduan' => $pengaduan]);
     }
 
     /**
@@ -46,7 +48,8 @@ class PengaduanController extends Controller
      */
     public function show($id)
     {
-        //
+        $pengaduan = Pengaduan::where('id', $id)->first();
+        return view('Admin.Pengaduan.show', ['pengaduan' => $pengaduan]);
     }
 
     /**

@@ -4,7 +4,7 @@
     position: relative;
     width: 100%;
     height: 430px;
-    background: #6a70fc;
+    background: hsl(0, 90%, 40%);
     overflow: hidden;
 }
 
@@ -121,7 +121,7 @@ body {
 .navbar .container-fluid #navbarNav .navbar-nav .nav-item .btn-purple {
     border: 1px solid #fff;
     background: #fff;
-    color: #6a70fc !important;
+    color: hsl(0, 80%, 40%) !important;
     width: 100%;
 }
 
@@ -132,7 +132,7 @@ body {
 }
 
 .navbar .container-fluid #navbarNav .navbar-nav .nav-item .btn-outline-purple:hover {
-    color: #6a70fc;
+    color: hsl(0, 80%, 40%);
     border: 1px solid #fff;
     background: #fff;
 }
@@ -154,7 +154,7 @@ body {
         padding: 32px 20px 32px 20px;
         background: #fff;
         margin-top: -160px;
-        border-color: #6a70fc;
+        border-color: hsl(0, 80%, 40%);
     }
 }
 
@@ -163,7 +163,7 @@ body {
         padding: 32px 20px 32px 20px;
         background: #fff;
         margin-top: -160px;
-        border-color: #6a70fc;
+        border-color: hsl(0, 80%, 40%);
     }
 }
 
@@ -172,7 +172,7 @@ body {
         padding: 32px 20px 32px 20px;
         background: #fff;
         margin-top: -160px;
-        border-color: #6a70fc;
+        border-color: hsl(0, 80%, 40%);
     }
 }
 
@@ -197,7 +197,7 @@ body {
 .row .col .content {
     padding: 32px 20px 32px 20px;
     background: #fff;
-    border-color: #6a70fc;
+    border-color: hsl(0, 80%, 40%);
 }
 
 @media screen and (min-width: 992px) {
@@ -205,24 +205,24 @@ body {
         padding: 32px 20px 32px 20px;
         background: #fff;
         margin-top: -160px;
-        border-color: #6a70fc;
+        border-color: hsl(0, 80%, 40%);
     }
 }
 
 .row .col .content .card {
-    background: #6a70fc;
+    background: hsl(0, 80%, 40%);
     padding: 16px;
     color: #fff;
 }
 
 .row .col .content .btn-custom {
-    background: #6a70fc;
+    background: hsl(0, 80%, 40%);
     color: #fff;
     width: 100%;
 }
 
 .pengaduan .bg-purple {
-    background: #6a70fc;
+    background: hsl(0, 80%, 40%);
     width: 100%;
     padding: 26px;
 }
@@ -239,8 +239,8 @@ body {
 }
 
 .modal .modal-dialog .modal-content .modal-body .btn-purple {
-    border: 1px solid #6a70fc;
-    background: #6a70fc;
+    border: 1px solid hsl(0, 80%, 40%);
+    background: hsl(0, 80%, 40%);
     color: #fff;
     width: 100%;
 }
